@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="relative py-16 px-4 border-t border-purple-900/30 bg-gradient-to-b from-slate-950 via-purple-950/30 to-slate-950 overflow-hidden">
       {/* Background decoration */}
@@ -11,65 +16,65 @@ export function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-3">VEL TOKEN</h3>
-            <p className="text-cyan-400 mb-4">Let Intelligence Drive Wealth</p>
+            <p className="text-cyan-400 mb-4">{t.footer.tagline}</p>
             <p className="text-slate-400 text-sm">
-              AI-powered intelligent digital asset built on compliance and transparency.
+              {t.footer.description}
             </p>
           </div>
 
           {/* Learn */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Learn</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.learn}</h4>
             <div className="space-y-2 text-sm">
               <Link href="/technology" className="block text-slate-400 hover:text-white transition">
-                Technology
+                {t.nav.technology}
               </Link>
               <Link href="/tokenomics" className="block text-slate-400 hover:text-white transition">
-                Token Economics
+                {t.nav.tokenomics}
               </Link>
               <Link href="/compliance" className="block text-slate-400 hover:text-white transition">
-                Compliance
+                {t.nav.compliance}
               </Link>
               <Link href="/roadmap" className="block text-slate-400 hover:text-white transition">
-                Roadmap
+                {t.nav.roadmap}
               </Link>
             </div>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.company}</h4>
             <div className="space-y-2 text-sm">
               <Link href="/team" className="block text-slate-400 hover:text-white transition">
-                Team
+                {t.nav.team}
               </Link>
               <a href="#" className="block text-slate-400 hover:text-white transition">
-                About Us
+                {t.footer.aboutUs}
               </a>
               <a href="#" className="block text-slate-400 hover:text-white transition">
-                Careers
+                {t.footer.careers}
               </a>
               <a href="#" className="block text-slate-400 hover:text-white transition">
-                Contact
+                {t.footer.contact}
               </a>
             </div>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.legal}</h4>
             <div className="space-y-2 text-sm">
               <a href="#" className="block text-slate-400 hover:text-white transition">
-                Privacy Policy
+                {t.footer.privacyPolicy}
               </a>
               <a href="#" className="block text-slate-400 hover:text-white transition">
-                Terms of Service
+                {t.footer.termsOfService}
               </a>
               <a href="#" className="block text-slate-400 hover:text-white transition">
-                Cookie Policy
+                {t.footer.cookiePolicy}
               </a>
               <Link href="/compliance" className="block text-slate-400 hover:text-white transition">
-                Regulatory Info
+                {t.footer.regulatoryInfo}
               </Link>
             </div>
           </div>
@@ -78,7 +83,7 @@ export function Footer() {
         {/* Social Media */}
         <div className="pt-8 border-t border-slate-800">
           <div className="flex flex-col items-center gap-4 mb-8">
-            <h4 className="text-white font-semibold">Connect With Us</h4>
+            <h4 className="text-white font-semibold">{t.footer.connectWithUs}</h4>
             <div className="flex items-center gap-4">
               {/* Twitter/X */}
               <a
@@ -142,11 +147,11 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-slate-800 text-center text-slate-400 text-sm">
           <div className="mb-4">
-            <p className="font-semibold text-white">Velar Capital Group LLC</p>
-            <p>Registered in New York, USA</p>
+            <p className="font-semibold text-white">{t.footer.companyName}</p>
+            <p>{t.footer.registeredIn}</p>
           </div>
-          <p className="mb-2">© 2025 Velar Capital Group. All rights reserved.</p>
-          <p className="text-xs">SEC Reg D Compliant · FinCEN MSB Registered</p>
+          <p className="mb-2">{t.footer.copyright}</p>
+          <p className="text-xs">{t.footer.compliance}</p>
         </div>
       </div>
     </footer>
